@@ -4,7 +4,7 @@ pipeline {
 
     stages {
     
-        stage('Run Provar Tests') {
+        stage('Git Clone') {
 
             steps {
 
