@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites>
+  <testsuite failures="0" hostname="Burger" id="0" name="Sales/tests" package="" skipped="0" tests="1" time="126.97" timestamp="Mon Sep 21 14:57:30 IST 2020">
+	    <properties>
+		      <property name="excludeCallableTestCases" value="false" />
+
+		      <property name="testEnvironment" value="" />
+
+		      <property name="pluginOutputLevel" value="WARNING" />
+
+		      <property name="projectPath" value=".." />
+
+		      <property name="salesforceMetadataCache" value="Reuse" />
+
+		      <property name="resultsPathDisposition" value="Increment" />
+
+		      <property name="testOutputLevel" value="WARNING" />
+
+		      <property name="webBrowserType" value="Google Chrome" />
+
+		      <property name="resultsPath" value="../ANT/Results" />
+
+		      <property name="webBrowserConfiguration" value="Full Screen" />
+
+		      <property name="projectCachePath" value="C:\Users\SaiIndira\Provar1\Workspace6\Sales\ANT\..\..\.provarCaches" />
+
+	    </properties>
+
+	    <testcase classname="tests/Merchandise.testcase" name="Merchandise.testcase" time="119.225">
+	</testcase>
+
+  </testsuite>
+</testsuites>

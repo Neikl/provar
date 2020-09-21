@@ -1,0 +1,26 @@
+{
+   "provarHome":"C:/Program Files/Provar1/",
+   "projectPath":"C:/Users/SaiIndira/Provar1/Workspace6/Sales",
+   "resultsPath":"C:/Users/SaiIndira/Provar1/Workspace6/Sales/ANT/Results",
+   "smtpPath": "",
+   "resultsPathDisposition": "Increment", 
+   "testOutputLevel":"WARNING",
+   "pluginOutputlevel":"WARNING",
+   "stopOnError":false,
+   "lightningMode":true,
+   "connectionRefreshType":"Reload",
+   "metadata":{
+      "metadataLevel":"Reuse",
+      "cachePath":"../.provarCaches"
+   },
+   "environment":{
+      "testEnvironment":"",
+      "webBrowser":"Chrome",
+      "webBrowserConfig":"Full Screen",
+      "webBrowserProviderName":"Desktop",
+      "webBrowserDeviceName":"Full Screen"
+   }
+   ,"testCase":[
+    	"/Lead Creation Working.testcase","/Lead Creation.testcase","/Lead generation through Provar  API .testcase","/Oppur Details.testcase","/Reports .testcase","/Test Case 1.testcase","/Test Case 2.testcase","/To check Callability.testcase","/Verify wheather a Qualified Lead is created and Convert to a Closed Won opportunity.testcase","/Verify wheather a unqualified Lead is created .testcase","/Verify wheather a unqualified Lead is created 3.testcase"  
+	]
+}

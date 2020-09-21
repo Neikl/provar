@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites>
+  <testsuite failures="2" hostname="Burger" id="0" name="Sales/tests" package="" skipped="0" tests="4" time="412.259" timestamp="Sun Aug 02 22:55:38 IST 2020">
+	    <properties>
+		      <property name="excludeCallableTestCases" value="false" />
+
+		      <property name="testEnvironment" value="" />
+
+		      <property name="pluginOutputLevel" value="WARNING" />
+
+		      <property name="projectPath" value=".." />
+
+		      <property name="salesforceMetadataCache" value="Reuse" />
+
+		      <property name="resultsPathDisposition" value="Increment" />
+
+		      <property name="testOutputLevel" value="WARNING" />
+
+		      <property name="webBrowserType" value="Google Chrome" />
+
+		      <property name="resultsPath" value="../ANT/Results" />
+
+		      <property name="webBrowserConfiguration" value="Full Screen" />
+
+		      <property name="projectCachePath" value="C:\Users\SaiIndira\Provar1\Workspace6\Sales\ANT\..\..\.provarCaches" />
+
+	    </properties>
+
+	    <testcase classname="tests/Test Cases for POC\Lead Creation .testcase" name="Lead Creation .testcase" time="105.331">
+		      <failure message="Execution failed"><![CDATA[The control was not found.  Locator: By.xpath: //div[contains(@class,'bRelatedList')][1]//input[@name='new' or (contains(@name,'__new') and not(substring-after(@name,'__new')))]]]></failure>
+
+	    </testcase>
+
+	    <testcase classname="tests/Test Cases for POC\Lead generation through API.testcase" name="Lead generation through API.testcase" time="9.989">
+	</testcase>
+
+	    <testcase classname="tests/Test Cases for POC\Verify wheather a Qualified Lead is created and Convert to a Closed Won opportunity2.testcase" name="Verify wheather a Qualified Lead is created and Convert to a Closed Won opportunity2.testcase" time="116.196">
+		      <failure message="Execution failed"><![CDATA[The control was not found.  Locator: By.xpath: ( //div[@id='InlineEditDialogContent']//div[contains(@class, 'inlineEditDiv') or contains(@class, 'inlineEditCompoundDiv')]/table//tr/td[contains(@class,'labelCol') and  ( .//text() = 'First Name' )]/following-sibling::td[1] | //div[contains(@class,'pbBody') and not(//div[@id='InlineEditDialog' and contains(@style, 'visible')])]//div[contains(@class,'pbSubheader') and h3/text()[not(parent::span)] = 'Lead Information']/following-sibling::div[contains(@class,'pbSubsection')][1]/table//tr/td[contains(@class,'labelCol') and  ( .//text() = 'First Name' )]/following-sibling::td[1] )]]></failure>
+
+	    </testcase>
+
+	    <testcase classname="tests/Test Cases for POC\Verify whether unqualified Lead is created.testcase" name="Verify whether unqualified Lead is created.testcase" time="167.546">
+	</testcase>
+
+  </testsuite>
+</testsuites>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites>
+  <testsuite failures="0" hostname="Burger" id="0" name="Sales/tests" package="" skipped="0" tests="4" time="911.915" timestamp="Sun Aug 02 23:07:35 IST 2020">
+	    <properties>
+		      <property name="excludeCallableTestCases" value="false" />
+
+		      <property name="testEnvironment" value="" />
+
+		      <property name="pluginOutputLevel" value="WARNING" />
+
+		      <property name="projectPath" value=".." />
+
+		      <property name="salesforceMetadataCache" value="Reuse" />
+
+		      <property name="resultsPathDisposition" value="Increment" />
+
+		      <property name="testOutputLevel" value="WARNING" />
+
+		      <property name="webBrowserType" value="Google Chrome" />
+
+		      <property name="resultsPath" value="../ANT/Results" />
+
+		      <property name="webBrowserConfiguration" value="Full Screen" />
+
+		      <property name="projectCachePath" value="C:\Users\SaiIndira\Provar1\Workspace6\Sales\ANT\..\..\.provarCaches" />
+
+	    </properties>
+
+	    <testcase classname="tests/Test Cases for POC\Lead Creation .testcase" name="Lead Creation .testcase" time="402.743">
+	</testcase>
+
+	    <testcase classname="tests/Test Cases for POC\Lead generation through API.testcase" name="Lead generation through API.testcase" time="9.877">
+	</testcase>
+
+	    <testcase classname="tests/Test Cases for POC\Verify wheather a Qualified Lead is created and Convert to a Closed Won opportunity2.testcase" name="Verify wheather a Qualified Lead is created and Convert to a Closed Won opportunity2.testcase" time="314.49">
+	</testcase>
+
+	    <testcase classname="tests/Test Cases for POC\Verify whether unqualified Lead is created.testcase" name="Verify whether unqualified Lead is created.testcase" time="167.203">
+	</testcase>
+
+  </testsuite>
+</testsuites>

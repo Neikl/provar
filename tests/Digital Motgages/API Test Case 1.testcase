@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testCase id="7">
+  <summary/>
+  <steps>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexCreateObject" name="ApexCreateObject" parameterGeneratorUri="command:com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand" testItemId="6" title="Create Object: Lead=&gt;LeadId">
+      <arguments>
+        <argument id="objectType">
+          <value class="value" valueClass="string">Lead</value>
+        </argument>
+        <argument id="resultIdName">
+          <value class="value" valueClass="string">LeadId</value>
+        </argument>
+        <argument id="apexConnectionName">
+          <value class="value" valueClass="string">Test1</value>
+        </argument>
+        <argument id="LastName">
+          <value class="value" valueClass="string">Indira</value>
+        </argument>
+        <argument id="Salutation">
+          <value class="value" valueClass="string">Mr.</value>
+        </argument>
+        <argument id="Company">
+          <value class="value" valueClass="string">Tirumala</value>
+        </argument>
+        <argument id="Status">
+          <value class="value" valueClass="string">New</value>
+        </argument>
+        <argument id="IsUnreadByOwner">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="Loan_Amount__c">
+          <value class="value" valueClass="decimal">20000.0</value>
+        </argument>
+        <argument id="Mortgage_asset_value__c">
+          <value class="value" valueClass="decimal">20000.0</value>
+        </argument>
+        <argument id="Income_per_Annum__c">
+          <value class="value" valueClass="decimal">20000.0</value>
+        </argument>
+        <argument id="Loan_Type__c">
+          <value class="value" valueClass="string">Purchase</value>
+        </argument>
+        <argument id="DOB__c">
+          <value class="value" valueClass="date">531878400000</value>
+        </argument>
+        <argument id="SSN__c">
+          <value class="value" valueClass="decimal">123456789</value>
+        </argument>
+        <argument id="Property_Type__c">
+          <value class="value" valueClass="string">Residential</value>
+        </argument>
+        <argument id="assignmentRuleId"/>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+      </arguments>
+      <parameterGeneratorProperties>
+        <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand.ConnectionName">Test1</propertyValue>
+        <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand.CustomObjectName">Lead</propertyValue>
+      </parameterGeneratorProperties>
+      <generatedParameters>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Lead&amp;field=LastName" name="LastName" title="LastName"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Lead&amp;field=Salutation" name="Salutation" title="Salutation"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Lead&amp;field=Company" name="Company" title="Company"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Lead&amp;field=Status" name="Status" title="Status"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Lead&amp;field=IsUnreadByOwner" name="IsUnreadByOwner" title="IsUnreadByOwner"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Lead&amp;field=Loan_Amount__c" name="Loan_Amount__c" title="Loan_Amount__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Lead&amp;field=Mortgage_asset_value__c" name="Mortgage_asset_value__c" title="Mortgage_asset_value__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Lead&amp;field=Income_per_Annum__c" name="Income_per_Annum__c" title="Income_per_Annum__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Lead&amp;field=Loan_Type__c" name="Loan_Type__c" title="Loan_Type__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Lead&amp;field=DOB__c" name="DOB__c" title="DOB__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Lead&amp;field=SSN__c" name="SSN__c" title="SSN__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Lead&amp;field=Property_Type__c" name="Property_Type__c" title="Property_Type__c"/>
+      </generatedParameters>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexSoqlQuery" name="ApexSoqlQuery" testItemId="7" title="SOQL Query: select  from Lead=&gt;LeadRows">
+      <arguments>
+        <argument id="soqlQuery">
+          <value class="value" valueClass="string">select  from Lead</value>
+        </argument>
+        <argument id="apexConnectionName">
+          <value class="value" valueClass="string">Test1</value>
+        </argument>
+        <argument id="resultListName">
+          <value class="value" valueClass="string">LeadRows</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+      </arguments>
+    </apiCall>
+  </steps>
+</testCase>

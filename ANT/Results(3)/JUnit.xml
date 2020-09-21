@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Sales/tests" tests="4" failures="1" skipped="0" hostname="Burger" time="621.632" timestamp="Sun Aug 02 12:29:46 IST 2020">
+	<properties>
+		<property name="excludeCallableTestCases" value="false"/>
+		<property name="testEnvironment" value=""/>
+		<property name="pluginOutputLevel" value="WARNING"/>
+		<property name="projectPath" value=".."/>
+		<property name="salesforceMetadataCache" value="Reuse"/>
+		<property name="resultsPathDisposition" value="Increment"/>
+		<property name="testOutputLevel" value="WARNING"/>
+		<property name="webBrowserType" value="Google Chrome"/>
+		<property name="resultsPath" value="../ANT/Results"/>
+		<property name="webBrowserConfiguration" value="Full Screen"/>
+		<property name="projectCachePath" value="C:\Users\SaiIndira\Provar1\Workspace6\Sales\ANT\..\..\.provarCaches"/>
+	</properties>
+	<testcase classname="tests/Test Cases for POC\Lead Creation .testcase" name="Lead Creation .testcase" time="132.748">
+	</testcase>
+	<testcase classname="tests/Test Cases for POC\Lead generation through API.testcase" name="Lead generation through API.testcase" time="10.736">
+	</testcase>
+	<testcase classname="tests/Test Cases for POC\Verify wheather a Qualified Lead is created and Converted to a Closed Won opportunity.testcase" name="Verify wheather a Qualified Lead is created and Converted to a Closed Won opportunity.testcase" time="282.236">
+		<failure message="Execution failed"><![CDATA[Error doing interaction.  Connection Name: Test1, cause: [ElementNotVisibleException: element not interactable
+  (Session info: chrome=84.0.4147.105)
+  (Driver info: chromedriver=84.0.4147.30 (48b3e868b4cc0aa7e8149519690b6f6949e110a8-refs/branch-heads/4147@{#310}),platform=Windows NT 10.0.18362 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 48 milliseconds
+Build info: version: 'unknown', revision: 'unknown', time: 'unknown'
+System info: host: 'BURGER', ip: '192.168.100.107', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_191'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{mobileEmulationEnabled=false, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, hasTouchScreen=false, platform=XP, acceptSslCerts=false, goog:chromeOptions={debuggerAddress=localhost:51544}, acceptInsecureCerts=false, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=ignore, applicationCacheEnabled=false, rotatable=false, networkConnectionEnabled=false, chrome={chromedriverVersion=84.0.4147.30 (48b3e868b4cc0aa7e8149519690b6f6949e110a8-refs/branch-heads/4147@{#310}), userDataDir=C:\Users\SaiIndira\Provar1\Workspace6\.provarCaches\.chromeProfiles\profile0}, takesHeapSnapshot=true, pageLoadStrategy=normal, strictFileInteractability=false, databaseEnabled=false, handlesAlerts=true, version=84.0.4147.105, browserConnectionEnabled=false, proxy=Proxy(direct), nativeEvents=true, locationContextEnabled=true, cssSelectorsEnabled=true, webauthn:virtualAuthenticators=true}]
+Session ID: c2717b4de608f4018d12ea98ddcbebfd]]]></failure>
+	</testcase>
+	<testcase classname="tests/Test Cases for POC\Verify whether unqualified Lead is created.testcase" name="Verify whether unqualified Lead is created.testcase" time="175.064">
+	</testcase>
+</testsuite>

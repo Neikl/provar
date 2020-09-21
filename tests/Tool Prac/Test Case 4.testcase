@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testCase id="0">
+  <summary/>
+  <steps>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexConnect" name="ApexConnect" testItemId="251" title="Salesforce Connect: Test1 (Test)">
+      <arguments>
+        <argument id="connectionName">
+          <value class="value" valueClass="string">Test1</value>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">Test1</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+        <argument id="uiApplicationName">
+          <value class="value" valueClass="string">Digital_Mortgages</value>
+        </argument>
+        <argument id="quickUiLogin">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="closeAllPrimaryTabs">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="reuseConnectionName"/>
+        <argument id="alreadyOpenBehaviour">
+          <value class="value" valueClass="string">Fail</value>
+        </argument>
+        <argument id="privateBrowsingMode"/>
+        <argument id="enableObjectIdLogging">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="autoCleanup"/>
+        <argument id="cleanupConnectionName"/>
+        <argument id="logFileLocation"/>
+        <argument id="username"/>
+        <argument id="password"/>
+        <argument id="securityToken"/>
+        <argument id="environment"/>
+        <argument id="lightningMode">
+          <value class="value" valueClass="string">default</value>
+        </argument>
+        <argument id="webBrowser"/>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.control.StepGroup" name="StepGroup" testItemId="252" title="Read Excel">
+      <arguments>
+        <argument id="description">
+          <value class="value" valueClass="string">Read Excel</value>
+        </argument>
+      </arguments>
+      <parameterValueSources>
+        <parameterValueSource variableName="ExcelData" variableScope="Test">
+          <cacheToken>C:/Users/SaiIndira/Provar1/Workspace6/Sales/templates/Oppur details.xlsx;1597646179950</cacheToken>
+          <cachedParameters>
+            <apiParam name="RowNumber"/>
+            <apiParam name="CCScore"/>
+            <apiParam name="CoLateralDocuments"/>
+            <apiParam name="FixedRateOfInterest"/>
+            <apiParam name="GuarantorDOB"/>
+            <apiParam name="GuarantorDocumentsSubmitted"/>
+            <apiParam name="GuarantorEmail"/>
+            <apiParam name="GuarantorFirstName"/>
+            <apiParam name="GuarantorLastName"/>
+            <apiParam name="GuarantorMobile"/>
+            <apiParam name="GuarantorSSN"/>
+            <apiParam name="OtherMortgageLoans"/>
+            <apiParam name="PaycheckStubsFromLast30Days"/>
+            <apiParam name="PaymentsFrequency"/>
+            <apiParam name="ProcessDocumentation"/>
+            <apiParam name="Reason"/>
+            <apiParam name="TenureInYears"/>
+            <apiParam name="W2OrI9FormsFromPast2Years"/>
+          </cachedParameters>
+          <sourceValue class="excelTarget" namesLocation="FirstRowOfRange" whereComparison="EqualTo">
+            <workbookPath class="value" valueClass="string">templates/Oppur details.xlsx</workbookPath>
+            <worksheetName class="value" valueClass="string">Sheet1</worksheetName>
+            <valuesRange class="value" valueClass="string">A1:Q2</valuesRange>
+          </sourceValue>
+        </parameterValueSource>
+      </parameterValueSources>
+      <clauses>
+        <clause name="hidden" testItemId="36"/>
+      </clauses>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.control.ForEach" name="ForEach" testItemId="253" title="For Each: {ExcelData}=&gt;Row">
+      <arguments>
+        <argument id="list">
+          <value class="variable">
+            <path element="ExcelData"/>
+          </value>
+        </argument>
+        <argument id="fromItem">
+          <value class="value" valueClass="decimal">1</value>
+        </argument>
+        <argument id="valueName">
+          <value class="value" valueClass="string">Row</value>
+        </argument>
+        <argument id="continueOnFailure"/>
+      </arguments>
+      <clauses>
+        <clause name="substeps" testItemId="38">
+          <steps/>
+        </clause>
+      </clauses>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexCreateObject" name="ApexCreateObject" parameterGeneratorUri="command:com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand" testItemId="254" title="Create Object: Opportunity=&gt;OpportunityId">
+      <arguments>
+        <argument id="objectType">
+          <value class="value" valueClass="string">Opportunity</value>
+        </argument>
+        <argument id="resultIdName">
+          <value class="value" valueClass="string">OpportunityId</value>
+        </argument>
+        <argument id="apexConnectionName">
+          <value class="value" valueClass="string">Test1</value>
+        </argument>
+        <argument id="Name">
+          <value class="value" valueClass="string">ABCD</value>
+        </argument>
+        <argument id="StageName">
+          <value class="value" valueClass="string">Qualification</value>
+        </argument>
+        <argument id="Probability">
+          <value class="value" valueClass="decimal">10.0</value>
+        </argument>
+        <argument id="CloseDate">
+          <value class="value" valueClass="date">1601424000000</value>
+        </argument>
+        <argument id="ForecastCategoryName">
+          <value class="value" valueClass="string">Pipeline</value>
+        </argument>
+        <argument id="Paycheck_stubs_from_last_30_days__c">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="Co_lateral_Documents__c">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="W2_or_I_9_forms_from_past_2_years__c">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="Guarantor_Documents_submitted__c">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="assignmentRuleId"/>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+        <argument id="Tenure_in_years__c">
+          <value class="value" valueClass="string">15</value>
+        </argument>
+        <argument id="Other_Mortgage_Loans__c">
+          <value class="value" valueClass="string">No</value>
+        </argument>
+        <argument id="Fixed_rate_of_Interest__c">
+          <value class="value" valueClass="string">2.875</value>
+        </argument>
+        <argument id="Payments_Frequency__c">
+          <value class="value" valueClass="string">30 days</value>
+        </argument>
+        <argument id="Guarantor_First_Name__c">
+          <value class="variable">
+            <path element="Row"/>
+            <path element="GuarantorFirstName"/>
+          </value>
+        </argument>
+        <argument id="Guarantor_Last_Name__c">
+          <value class="variable">
+            <path element="Row"/>
+            <path element="GuarantorLastName"/>
+          </value>
+        </argument>
+        <argument id="Guarantor_Email__c">
+          <value class="variable">
+            <path element="Row"/>
+            <path element="GuarantorEmail"/>
+          </value>
+        </argument>
+        <argument id="Guarantor_SSN__c">
+          <value class="variable">
+            <path element="Row"/>
+            <path element="GuarantorSSN"/>
+          </value>
+        </argument>
+        <argument id="Guarantor_Mobile__c">
+          <value class="variable">
+            <path element="Row"/>
+            <path element="GuarantorMobile"/>
+          </value>
+        </argument>
+        <argument id="Guarantor_DOB__c">
+          <value class="value" valueClass="date">761443200000</value>
+        </argument>
+        <argument id="Process_Documentation__c">
+          <value class="value" valueClass="string">Fully received</value>
+        </argument>
+        <argument id="Reason__c">
+          <value class="value" valueClass="string">All documents submitted</value>
+        </argument>
+        <argument id="CC_Score__c">
+          <value class="value" valueClass="string">Excellent(740+)</value>
+        </argument>
+      </arguments>
+      <parameterGeneratorProperties>
+        <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand.ConnectionName">Test1</propertyValue>
+        <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand.CustomObjectName">Opportunity</propertyValue>
+      </parameterGeneratorProperties>
+      <generatedParameters>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=Name" name="Name" title="Name"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=StageName" name="StageName" title="StageName"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=Probability" name="Probability" title="Probability"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=CloseDate" name="CloseDate" title="CloseDate"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=ForecastCategoryName" name="ForecastCategoryName" title="ForecastCategoryName"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=Tenure_in_years__c" name="Tenure_in_years__c" title="Tenure_in_years__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=Other_Mortgage_Loans__c" name="Other_Mortgage_Loans__c" title="Other_Mortgage_Loans__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=Paycheck_stubs_from_last_30_days__c" name="Paycheck_stubs_from_last_30_days__c" title="Paycheck_stubs_from_last_30_days__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=Co_lateral_Documents__c" name="Co_lateral_Documents__c" title="Co_lateral_Documents__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=W2_or_I_9_forms_from_past_2_years__c" name="W2_or_I_9_forms_from_past_2_years__c" title="W2_or_I_9_forms_from_past_2_years__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=Fixed_rate_of_Interest__c" name="Fixed_rate_of_Interest__c" title="Fixed_rate_of_Interest__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=Payments_Frequency__c" name="Payments_Frequency__c" title="Payments_Frequency__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=Guarantor_First_Name__c" name="Guarantor_First_Name__c" title="Guarantor_First_Name__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=Guarantor_Last_Name__c" name="Guarantor_Last_Name__c" title="Guarantor_Last_Name__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=Guarantor_Email__c" name="Guarantor_Email__c" title="Guarantor_Email__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=Guarantor_SSN__c" name="Guarantor_SSN__c" title="Guarantor_SSN__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=Guarantor_Mobile__c" name="Guarantor_Mobile__c" title="Guarantor_Mobile__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=Guarantor_DOB__c" name="Guarantor_DOB__c" title="Guarantor_DOB__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=Guarantor_Documents_submitted__c" name="Guarantor_Documents_submitted__c" title="Guarantor_Documents_submitted__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=Process_Documentation__c" name="Process_Documentation__c" title="Process_Documentation__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=Reason__c" name="Reason__c" title="Reason__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=CC_Score__c" name="CC_Score__c" title="CC_Score__c"/>
+      </generatedParameters>
+    </apiCall>
+  </steps>
+</testCase>

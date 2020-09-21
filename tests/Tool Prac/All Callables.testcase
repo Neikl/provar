@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testCase id="5">
+  <summary/>
+  <steps>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexConnect" name="ApexConnect" testItemId="1" title="Salesforce Connect: Test1 (Global)">
+      <arguments>
+        <argument id="connectionName">
+          <value class="value" valueClass="string">Test1</value>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">Test1</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Global</value>
+        </argument>
+        <argument id="uiApplicationName">
+          <value class="value" valueClass="string">Digital_Mortgages</value>
+        </argument>
+        <argument id="quickUiLogin">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="closeAllPrimaryTabs">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="reuseConnectionName"/>
+        <argument id="alreadyOpenBehaviour">
+          <value class="value" valueClass="string">Reuse</value>
+        </argument>
+        <argument id="privateBrowsingMode"/>
+        <argument id="enableObjectIdLogging">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="autoCleanup"/>
+        <argument id="cleanupConnectionName"/>
+        <argument id="logFileLocation"/>
+        <argument id="username"/>
+        <argument id="password"/>
+        <argument id="securityToken"/>
+        <argument id="environment"/>
+        <argument id="lightningMode">
+          <value class="value" valueClass="string">default</value>
+        </argument>
+        <argument id="webBrowser"/>
+      </arguments>
+    </apiCall>
+    <caseCall testCaseId="5c1edb83-65cc-49bb-a21d-fbbd3f9ced1d" testCasePath="tests/Callables/Lead Creation.testcase" testItemId="5">
+      <arguments>
+        <argument id="reuseConnectionName">
+          <value class="value" valueClass="string">Test1</value>
+        </argument>
+      </arguments>
+      <outputArguments>
+        <outputArgument id="leadId" scope="Global">
+          <name class="value" valueClass="string">leadId</name>
+        </outputArgument>
+      </outputArguments>
+    </caseCall>
+    <caseCall testCaseId="2b6492dd-ec02-41f6-83a0-82357af650d3" testCasePath="tests/Callables/Lead Conversion to a Qualified Lead.testcase" testItemId="25">
+      <tags>
+        <string>disabled</string>
+      </tags>
+      <arguments>
+        <argument id="leadId">
+          <value class="variable">
+            <path element="leadId"/>
+          </value>
+        </argument>
+        <argument id="reuseConnectionName">
+          <value class="value" valueClass="string">Test1</value>
+        </argument>
+      </arguments>
+    </caseCall>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexConvertLead" name="ApexConvertLead" testItemId="30" title="Convert Lead:  =&gt; //">
+      <arguments>
+        <argument id="apexConnectionName">
+          <value class="value" valueClass="string">Test1</value>
+        </argument>
+        <argument id="leadId">
+          <value class="variable">
+            <path element="leadId"/>
+          </value>
+        </argument>
+        <argument id="accountId"/>
+        <argument id="contactId"/>
+        <argument id="ownerId"/>
+        <argument id="convertedStatus">
+          <value class="value" valueClass="string">Converted</value>
+        </argument>
+        <argument id="createOpportunity">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="opportunityName">
+          <value class="value" valueClass="string">Katekin</value>
+        </argument>
+        <argument id="overwriteLeadSource">
+          <value class="value" valueClass="boolean">false</value>
+        </argument>
+        <argument id="sendNotificationEmail">
+          <value class="value" valueClass="boolean">false</value>
+        </argument>
+        <argument id="resultAccountIdName">
+          <value class="value" valueClass="string">convertedAccountId</value>
+        </argument>
+        <argument id="resultContactIdName">
+          <value class="value" valueClass="string">convertedContactId</value>
+        </argument>
+        <argument id="resultOpportunityIdName">
+          <value class="value" valueClass="string">convertedOpportunityId</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="23" title="Set Values: OppID">
+      <arguments>
+        <argument id="values">
+          <value class="valueList" mutable="Mutable">
+            <namedValues mutable="Mutable">
+              <namedValue name="valuePath">
+                <value class="value" valueClass="string">OppID</value>
+              </namedValue>
+              <namedValue name="value"/>
+              <namedValue name="valueScope">
+                <value class="value" valueClass="string">Global</value>
+              </namedValue>
+            </namedValues>
+          </value>
+        </argument>
+      </arguments>
+    </apiCall>
+    <caseCall testCaseId="11fe7cc8-3675-436a-a275-44afaeacfae0" testCasePath="tests/Callables/Oppurtunity Details.testcase" testItemId="26">
+      <arguments>
+        <argument id="reuseConnectionName">
+          <value class="value" valueClass="string">Test1</value>
+        </argument>
+      </arguments>
+      <outputArguments>
+        <outputArgument id="MyOppID">
+          <name class="value" valueClass="string">MyOppID</name>
+        </outputArgument>
+      </outputArguments>
+    </caseCall>
+    <caseCall testCaseId="5a0eca44-009d-463d-89ef-971650429d37" testCasePath="tests/Callables/Navigation through Opur Stages.testcase" testItemId="28">
+      <arguments>
+        <argument id="reuseConnectionName">
+          <value class="value" valueClass="string">Test1</value>
+        </argument>
+        <argument id="sfUiTargetObjectId">
+          <value class="variable">
+            <path element="MyOppID"/>
+          </value>
+        </argument>
+        <argument id="MyOppID">
+          <value class="variable">
+            <path element="MyOppID"/>
+          </value>
+        </argument>
+      </arguments>
+    </caseCall>
+  </steps>
+</testCase>

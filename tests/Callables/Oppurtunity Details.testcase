@@ -1,0 +1,1114 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testCase id="26" registryId="11fe7cc8-3675-436a-a275-44afaeacfae0" visibility="Internal">
+  <summary/>
+  <steps>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexConnect" name="ApexConnect" testItemId="1" title="Salesforce Connect: Test1 (Test)">
+      <tags>
+        <string>disabled</string>
+      </tags>
+      <arguments>
+        <argument id="connectionName">
+          <value class="value" valueClass="string">Test1</value>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">Test1</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+        <argument id="uiApplicationName">
+          <value class="value" valueClass="string">Digital_Mortgages</value>
+        </argument>
+        <argument id="quickUiLogin">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="closeAllPrimaryTabs">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument argId="a3ac5a2b-5b42-4355-9948-f3a9f7a152c3" id="reuseConnectionName">
+          <value class="variable">
+            <path element="reuseConnectionName"/>
+          </value>
+        </argument>
+        <argument id="alreadyOpenBehaviour">
+          <value class="value" valueClass="string">Reuse</value>
+        </argument>
+        <argument id="privateBrowsingMode"/>
+        <argument id="enableObjectIdLogging">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="autoCleanup"/>
+        <argument id="cleanupConnectionName"/>
+        <argument id="logFileLocation"/>
+        <argument id="username"/>
+        <argument id="password"/>
+        <argument id="securityToken"/>
+        <argument id="environment"/>
+        <argument id="lightningMode">
+          <value class="value" valueClass="string">default</value>
+        </argument>
+        <argument id="webBrowser"/>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="253" title="Set Values: MyOppID">
+      <arguments>
+        <argument id="values">
+          <value class="valueList" mutable="Mutable">
+            <namedValues mutable="Mutable">
+              <namedValue name="valuePath">
+                <value class="value" valueClass="string">MyOppID</value>
+              </namedValue>
+              <namedValue name="value">
+                <value class="variable">
+                  <path element="OppID"/>
+                </value>
+              </namedValue>
+              <namedValue name="valueScope">
+                <value class="value" valueClass="string">Global</value>
+              </namedValue>
+            </namedValues>
+          </value>
+        </argument>
+      </arguments>
+      <parameterValueSources/>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" isTitleUpdated="true" name="UiWithScreen" testItemId="251" title=" Opportunity Details screen">
+      <arguments>
+        <argument id="uiConnectionName">
+          <value class="value" valueClass="string">Test1</value>
+        </argument>
+        <argument argId="4fb9a0d9-2737-4790-945d-915ebaa1a2cf" id="target">
+          <value class="uiTarget" uri="sf:ui:target?object=Opportunity&amp;action=View"/>
+        </argument>
+        <argument argId="ba56e6a1-ddca-47f5-857f-b5122570bcd9" id="navigate">
+          <value class="value" valueClass="string">Dont</value>
+        </argument>
+        <argument argId="469904f0-5946-499d-a377-269a9b191099" id="targetDescription">
+          <value class="value" valueClass="string">On SF Opportunity View screen</value>
+        </argument>
+        <argument argId="88e3a09e-21d2-484d-adb4-067ed210edf8" id="windowSelection">
+          <value class="value" valueClass="string">Default</value>
+        </argument>
+        <argument argId="948746b8-b6fe-4a52-9c9a-ad3f75189f59" id="windowSize">
+          <value class="value" valueClass="string">Default</value>
+        </argument>
+        <argument id="closeWindow"/>
+        <argument id="captureBefore">
+          <value class="value" valueClass="string">false</value>
+        </argument>
+        <argument id="captureAfter">
+          <value class="value" valueClass="string">false</value>
+        </argument>
+        <argument argId="597e8bb5-de7a-4156-88d0-577684d3c587" id="sfUiTargetObjectId">
+          <value class="variable">
+            <path element="MyOppID"/>
+          </value>
+        </argument>
+      </arguments>
+      <clauses>
+        <clause name="substeps" testItemId="55">
+          <steps>
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiAssert" name="UiAssert" testItemId="56" title="UI Assert">
+              <arguments>
+                <argument id="resultName">
+                  <value class="value" valueClass="string">Values</value>
+                </argument>
+                <argument id="resultScope">
+                  <value class="value" valueClass="string">Test</value>
+                </argument>
+                <argument id="fieldAssertions">
+                  <value class="valueList" mutable="Mutable">
+                    <uiFieldAssertion resultName="CC_Score__c">
+                      <fieldLocator uri="ui:locator?name=CC_Score__c&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DOpportunity%26field%3DCC_Score__c"/>
+                      <attributeAssertions>
+                        <uiAttributeAssertion attributeName="value" comparisonType="None"/>
+                      </attributeAssertions>
+                    </uiFieldAssertion>
+                  </value>
+                </argument>
+                <argument id="captureAfter">
+                  <value class="value" valueClass="string">false</value>
+                </argument>
+                <argument id="columnAssertions">
+                  <value class="valueList" mutable="Mutable"/>
+                </argument>
+                <argument id="pageAssertions">
+                  <value class="valueList" mutable="Mutable"/>
+                </argument>
+                <argument id="beforeWait"/>
+                <argument id="autoRetry"/>
+              </arguments>
+            </apiCall>
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="246" title="Double Click the Payments Frequency picklist">
+              <arguments>
+                <argument id="locator">
+                  <value class="uiLocator" uri="ui:locator?name=Payments_Frequency__c&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DOpportunity%26field%3DPayments_Frequency__c"/>
+                </argument>
+                <argument id="interaction">
+                  <value class="uiInteraction" uri="ui:interaction?name=doubleClick"/>
+                </argument>
+                <argument id="captureBefore">
+                  <value class="value" valueClass="string">false</value>
+                </argument>
+                <argument id="captureAfter">
+                  <value class="value" valueClass="string">false</value>
+                </argument>
+                <argument id="beforeWait">
+                  <value class="uiWait" uri="default"/>
+                </argument>
+                <argument id="afterWait">
+                  <value class="uiWait" uri="default"/>
+                </argument>
+                <argument id="interactionDescription">
+                  <value class="value" valueClass="string">Double Click the Payments Frequency picklist</value>
+                </argument>
+                <argument id="autoRetry"/>
+              </arguments>
+            </apiCall>
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" isTitleUpdated="true" name="UiDoAction" testItemId="247" title="Set the Tenure(in years)">
+              <arguments>
+                <argument id="locator">
+                  <value class="uiLocator" uri="ui:locator?name=Tenure_in_years__c&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DOpportunity%26field%3DTenure_in_years__c"/>
+                </argument>
+                <argument id="interaction">
+                  <value class="uiInteraction" uri="ui:interaction?name=set"/>
+                </argument>
+                <argument id="value">
+                  <value class="value" valueClass="string">15</value>
+                </argument>
+                <argument id="blur">
+                  <value class="value" valueClass="boolean">false</value>
+                </argument>
+                <argument id="pressEnter">
+                  <value class="value" valueClass="boolean">false</value>
+                </argument>
+                <argument id="captureBefore">
+                  <value class="value" valueClass="string">false</value>
+                </argument>
+                <argument id="captureAfter">
+                  <value class="value" valueClass="string">false</value>
+                </argument>
+                <argument id="beforeWait">
+                  <value class="uiWait" uri="default"/>
+                </argument>
+                <argument id="afterWait">
+                  <value class="uiWait" uri="default"/>
+                </argument>
+                <argument id="interactionDescription">
+                  <value class="value" valueClass="string">Set the Tenure(in years) picklist to 15</value>
+                </argument>
+                <argument id="autoRetry"/>
+              </arguments>
+              <generatedParameters>
+                <apiParam group="value" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=Tenure_in_years__c" name="value" seq="10000" title="Value">
+                  <summary>The value to be populated.</summary>
+                  <type>
+                    <choiceType>
+                      <constraints>
+                        <valueConstraint name="boundedValues">15:15|20:20|30:30</valueConstraint>
+                      </constraints>
+                    </choiceType>
+                  </type>
+                </apiParam>
+                <apiParam group="value" name="blur" seq="10001" title="Tab off field">
+                  <summary>Whether the tab key should be pressed after the value is populated.</summary>
+                  <type>
+                    <booleanType/>
+                  </type>
+                </apiParam>
+                <apiParam group="value" name="pressEnter" seq="10002" title="Press Enter">
+                  <summary>Whether the Enter key should be pressed after the value is populated.</summary>
+                  <type>
+                    <booleanType/>
+                  </type>
+                </apiParam>
+              </generatedParameters>
+            </apiCall>
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" isTitleUpdated="true" name="UiDoAction" testItemId="60" title="Set the CC Score ">
+              <arguments>
+                <argument id="locator">
+                  <value class="uiLocator" uri="ui:locator?name=CC_Score__c&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DOpportunity%26field%3DCC_Score__c"/>
+                </argument>
+                <argument id="interaction">
+                  <value class="uiInteraction" uri="ui:interaction?name=set"/>
+                </argument>
+                <argument id="value">
+                  <value class="value" valueClass="string">Excellent(740+)</value>
+                </argument>
+                <argument id="blur">
+                  <value class="value" valueClass="boolean">false</value>
+                </argument>
+                <argument id="pressEnter">
+                  <value class="value" valueClass="boolean">false</value>
+                </argument>
+                <argument id="captureBefore">
+                  <value class="value" valueClass="string">false</value>
+                </argument>
+                <argument id="captureAfter">
+                  <value class="value" valueClass="string">false</value>
+                </argument>
+                <argument id="beforeWait">
+                  <value class="uiWait" uri="default"/>
+                </argument>
+                <argument id="afterWait">
+                  <value class="uiWait" uri="default"/>
+                </argument>
+                <argument id="interactionDescription">
+                  <value class="value" valueClass="string">Set the CC Score picklist to Excellent(740+)</value>
+                </argument>
+                <argument id="autoRetry"/>
+              </arguments>
+              <generatedParameters>
+                <apiParam group="value" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=CC_Score__c" name="value" seq="10000" title="Value">
+                  <summary>The value to be populated.</summary>
+                  <type>
+                    <choiceType>
+                      <constraints>
+                        <valueConstraint name="boundedValues">Excellent(740+):Excellent(740+)|Good(700+):Good(700+)|Average(640+):Average(640+)|Need Some work (639&amp;below):Need Some work (639&amp;below)</valueConstraint>
+                        <valueConstraint name="unrestricted">true</valueConstraint>
+                      </constraints>
+                    </choiceType>
+                  </type>
+                </apiParam>
+                <apiParam group="value" name="blur" seq="10001" title="Tab off field">
+                  <summary>Whether the tab key should be pressed after the value is populated.</summary>
+                  <type>
+                    <booleanType/>
+                  </type>
+                </apiParam>
+                <apiParam group="value" name="pressEnter" seq="10002" title="Press Enter">
+                  <summary>Whether the Enter key should be pressed after the value is populated.</summary>
+                  <type>
+                    <booleanType/>
+                  </type>
+                </apiParam>
+              </generatedParameters>
+            </apiCall>
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" isTitleUpdated="true" name="UiDoAction" testItemId="61" title="Set the Payments Frequency ">
+              <arguments>
+                <argument id="locator">
+                  <value class="uiLocator" uri="ui:locator?name=Payments_Frequency__c&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DOpportunity%26field%3DPayments_Frequency__c"/>
+                </argument>
+                <argument id="interaction">
+                  <value class="uiInteraction" uri="ui:interaction?name=set"/>
+                </argument>
+                <argument id="value">
+                  <value class="value" valueClass="string">30 days</value>
+                </argument>
+                <argument id="blur">
+                  <value class="value" valueClass="boolean">false</value>
+                </argument>
+                <argument id="pressEnter">
+                  <value class="value" valueClass="boolean">false</value>
+                </argument>
+                <argument id="captureBefore">
+                  <value class="value" valueClass="string">false</value>
+                </argument>
+                <argument id="captureAfter">
+                  <value class="value" valueClass="string">false</value>
+                </argument>
+                <argument id="beforeWait">
+                  <value class="uiWait" uri="default"/>
+                </argument>
+                <argument id="afterWait">
+                  <value class="uiWait" uri="default"/>
+                </argument>
+                <argument id="interactionDescription">
+                  <value class="value" valueClass="string">Set the Payments Frequency picklist to 30 days</value>
+                </argument>
+                <argument id="autoRetry"/>
+              </arguments>
+              <generatedParameters>
+                <apiParam group="value" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=Payments_Frequency__c" name="value" seq="10000" title="Value">
+                  <summary>The value to be populated.</summary>
+                  <type>
+                    <choiceType>
+                      <constraints>
+                        <valueConstraint name="boundedValues">15 days:15 days|30 days:30 days</valueConstraint>
+                      </constraints>
+                    </choiceType>
+                  </type>
+                </apiParam>
+                <apiParam group="value" name="blur" seq="10001" title="Tab off field">
+                  <summary>Whether the tab key should be pressed after the value is populated.</summary>
+                  <type>
+                    <booleanType/>
+                  </type>
+                </apiParam>
+                <apiParam group="value" name="pressEnter" seq="10002" title="Press Enter">
+                  <summary>Whether the Enter key should be pressed after the value is populated.</summary>
+                  <type>
+                    <booleanType/>
+                  </type>
+                </apiParam>
+              </generatedParameters>
+            </apiCall>
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" isTitleUpdated="true" name="UiDoAction" testItemId="62" title="Set the Other Mortgage Loans ">
+              <arguments>
+                <argument id="locator">
+                  <value class="uiLocator" uri="ui:locator?name=Other_Mortgage_Loans__c&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DOpportunity%26field%3DOther_Mortgage_Loans__c"/>
+                </argument>
+                <argument id="interaction">
+                  <value class="uiInteraction" uri="ui:interaction?name=set"/>
+                </argument>
+                <argument id="value">
+                  <value class="value" valueClass="string">No</value>
+                </argument>
+                <argument id="blur">
+                  <value class="value" valueClass="boolean">false</value>
+                </argument>
+                <argument id="pressEnter">
+                  <value class="value" valueClass="boolean">false</value>
+                </argument>
+                <argument id="captureBefore">
+                  <value class="value" valueClass="string">false</value>
+                </argument>
+                <argument id="captureAfter">
+                  <value class="value" valueClass="string">false</value>
+                </argument>
+                <argument id="beforeWait">
+                  <value class="uiWait" uri="default"/>
+                </argument>
+                <argument id="afterWait">
+                  <value class="uiWait" uri="default"/>
+                </argument>
+                <argument id="interactionDescription">
+                  <value class="value" valueClass="string">Set the Other Mortgage Loans picklist to No</value>
+                </argument>
+                <argument id="autoRetry"/>
+              </arguments>
+              <generatedParameters>
+                <apiParam group="value" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=Other_Mortgage_Loans__c" name="value" seq="10000" title="Value">
+                  <summary>The value to be populated.</summary>
+                  <type>
+                    <choiceType>
+                      <constraints>
+                        <valueConstraint name="boundedValues">Yes:Yes|No:No</valueConstraint>
+                        <valueConstraint name="unrestricted">true</valueConstraint>
+                      </constraints>
+                    </choiceType>
+                  </type>
+                </apiParam>
+                <apiParam group="value" name="blur" seq="10001" title="Tab off field">
+                  <summary>Whether the tab key should be pressed after the value is populated.</summary>
+                  <type>
+                    <booleanType/>
+                  </type>
+                </apiParam>
+                <apiParam group="value" name="pressEnter" seq="10002" title="Press Enter">
+                  <summary>Whether the Enter key should be pressed after the value is populated.</summary>
+                  <type>
+                    <booleanType/>
+                  </type>
+                </apiParam>
+              </generatedParameters>
+            </apiCall>
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" isTitleUpdated="true" name="UiDoAction" testItemId="63" title="Check the Paycheck stubs ">
+              <arguments>
+                <argument id="locator">
+                  <value class="uiLocator" uri="ui:locator?name=Paycheck_stubs_from_last_30_days__c&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DOpportunity%26field%3DPaycheck_stubs_from_last_30_days__c"/>
+                </argument>
+                <argument id="interaction">
+                  <value class="uiInteraction" uri="ui:interaction?name=check"/>
+                </argument>
+                <argument id="blur">
+                  <value class="value" valueClass="boolean">false</value>
+                </argument>
+                <argument id="pressEnter">
+                  <value class="value" valueClass="boolean">false</value>
+                </argument>
+                <argument id="captureBefore">
+                  <value class="value" valueClass="string">false</value>
+                </argument>
+                <argument id="captureAfter">
+                  <value class="value" valueClass="string">false</value>
+                </argument>
+                <argument id="beforeWait">
+                  <value class="uiWait" uri="default"/>
+                </argument>
+                <argument id="afterWait">
+                  <value class="uiWait" uri="default"/>
+                </argument>
+                <argument id="interactionDescription">
+                  <value class="value" valueClass="string">Check the Paycheck stubs from last 30 days. field</value>
+                </argument>
+                <argument id="autoRetry"/>
+                <argument id="ieClickMethod">
+                  <value class="value" valueClass="string">Default</value>
+                </argument>
+              </arguments>
+              <generatedParameters>
+                <apiParam group="value" name="ieClickMethod" seq="10000" title="IE Click Method">
+                  <summary>How the click should be executed for Internet Explorer.</summary>
+                  <type>
+                    <choiceType>
+                      <constraints>
+                        <valueConstraint name="valuesSource">com.provar.core.model.base.java.EnumChoiceListValuesSource</valueConstraint>
+                        <valueConstraint name="valuesSourceDependencies">com.provar.core.model.ui.api.ClickMethod</valueConstraint>
+                      </constraints>
+                    </choiceType>
+                  </type>
+                </apiParam>
+              </generatedParameters>
+            </apiCall>
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="64" title="Check the Co-lateral Documents field">
+              <arguments>
+                <argument id="locator">
+                  <value class="uiLocator" uri="ui:locator?name=Co_lateral_Documents__c&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DOpportunity%26field%3DCo_lateral_Documents__c"/>
+                </argument>
+                <argument id="interaction">
+                  <value class="uiInteraction" uri="ui:interaction?name=check"/>
+                </argument>
+                <argument id="blur">
+                  <value class="value" valueClass="boolean">false</value>
+                </argument>
+                <argument id="pressEnter">
+                  <value class="value" valueClass="boolean">false</value>
+                </argument>
+                <argument id="captureBefore">
+                  <value class="value" valueClass="string">false</value>
+                </argument>
+                <argument id="captureAfter">
+                  <value class="value" valueClass="string">false</value>
+                </argument>
+                <argument id="beforeWait">
+                  <value class="uiWait" uri="default"/>
+                </argument>
+                <argument id="afterWait">
+                  <value class="uiWait" uri="default"/>
+                </argument>
+                <argument id="interactionDescription">
+                  <value class="value" valueClass="string">Check the Co-lateral Documents field</value>
+                </argument>
+                <argument id="autoRetry"/>
+                <argument id="ieClickMethod">
+                  <value class="value" valueClass="string">Default</value>
+                </argument>
+              </arguments>
+              <generatedParameters>
+                <apiParam group="value" name="ieClickMethod" seq="10000" title="IE Click Method">
+                  <summary>How the click should be executed for Internet Explorer.</summary>
+                  <type>
+                    <choiceType>
+                      <constraints>
+                        <valueConstraint name="valuesSource">com.provar.core.model.base.java.EnumChoiceListValuesSource</valueConstraint>
+                        <valueConstraint name="valuesSourceDependencies">com.provar.core.model.ui.api.ClickMethod</valueConstraint>
+                      </constraints>
+                    </choiceType>
+                  </type>
+                </apiParam>
+              </generatedParameters>
+            </apiCall>
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="65" title="Check the W2 or I-9 forms from past 2 years field">
+              <arguments>
+                <argument id="locator">
+                  <value class="uiLocator" uri="ui:locator?name=W2_or_I_9_forms_from_past_2_years__c&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DOpportunity%26field%3DW2_or_I_9_forms_from_past_2_years__c"/>
+                </argument>
+                <argument id="interaction">
+                  <value class="uiInteraction" uri="ui:interaction?name=check"/>
+                </argument>
+                <argument id="blur">
+                  <value class="value" valueClass="boolean">false</value>
+                </argument>
+                <argument id="pressEnter">
+                  <value class="value" valueClass="boolean">false</value>
+                </argument>
+                <argument id="captureBefore">
+                  <value class="value" valueClass="string">false</value>
+                </argument>
+                <argument id="captureAfter">
+                  <value class="value" valueClass="string">false</value>
+                </argument>
+                <argument id="beforeWait">
+                  <value class="uiWait" uri="default"/>
+                </argument>
+                <argument id="afterWait">
+                  <value class="uiWait" uri="default"/>
+                </argument>
+                <argument id="interactionDescription">
+                  <value class="value" valueClass="string">Check the W2 or I-9 forms from past 2 years field</value>
+                </argument>
+                <argument id="autoRetry"/>
+                <argument id="ieClickMethod">
+                  <value class="value" valueClass="string">Default</value>
+                </argument>
+              </arguments>
+              <generatedParameters>
+                <apiParam group="value" name="ieClickMethod" seq="10000" title="IE Click Method">
+                  <summary>How the click should be executed for Internet Explorer.</summary>
+                  <type>
+                    <choiceType>
+                      <constraints>
+                        <valueConstraint name="valuesSource">com.provar.core.model.base.java.EnumChoiceListValuesSource</valueConstraint>
+                        <valueConstraint name="valuesSourceDependencies">com.provar.core.model.ui.api.ClickMethod</valueConstraint>
+                      </constraints>
+                    </choiceType>
+                  </type>
+                </apiParam>
+              </generatedParameters>
+            </apiCall>
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" isTitleUpdated="true" name="UiDoAction" testItemId="66" title="Set the Process Documentation">
+              <arguments>
+                <argument id="locator">
+                  <value class="uiLocator" uri="ui:locator?name=Process_Documentation__c&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DOpportunity%26field%3DProcess_Documentation__c"/>
+                </argument>
+                <argument id="interaction">
+                  <value class="uiInteraction" uri="ui:interaction?name=set"/>
+                </argument>
+                <argument id="value">
+                  <value class="value" valueClass="string">Fully received</value>
+                </argument>
+                <argument id="blur">
+                  <value class="value" valueClass="boolean">false</value>
+                </argument>
+                <argument id="pressEnter">
+                  <value class="value" valueClass="boolean">false</value>
+                </argument>
+                <argument id="captureBefore">
+                  <value class="value" valueClass="string">false</value>
+                </argument>
+                <argument id="captureAfter">
+                  <value class="value" valueClass="string">false</value>
+                </argument>
+                <argument id="beforeWait">
+                  <value class="uiWait" uri="default"/>
+                </argument>
+                <argument id="afterWait">
+                  <value class="uiWait" uri="default"/>
+                </argument>
+                <argument id="interactionDescription">
+                  <value class="value" valueClass="string">Set the Process Documentation picklist to Fully received</value>
+                </argument>
+                <argument id="autoRetry"/>
+              </arguments>
+              <generatedParameters>
+                <apiParam group="value" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=Process_Documentation__c" name="value" seq="10000" title="Value">
+                  <summary>The value to be populated.</summary>
+                  <type>
+                    <choiceType>
+                      <constraints>
+                        <valueConstraint name="boundedValues">Partially received:Partially received|Fully received:Fully received</valueConstraint>
+                        <valueConstraint name="unrestricted">true</valueConstraint>
+                      </constraints>
+                    </choiceType>
+                  </type>
+                </apiParam>
+                <apiParam group="value" name="blur" seq="10001" title="Tab off field">
+                  <summary>Whether the tab key should be pressed after the value is populated.</summary>
+                  <type>
+                    <booleanType/>
+                  </type>
+                </apiParam>
+                <apiParam group="value" name="pressEnter" seq="10002" title="Press Enter">
+                  <summary>Whether the Enter key should be pressed after the value is populated.</summary>
+                  <type>
+                    <booleanType/>
+                  </type>
+                </apiParam>
+              </generatedParameters>
+            </apiCall>
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" isTitleUpdated="true" name="UiDoAction" testItemId="67" title="Set the Guarantor First Name field ">
+              <arguments>
+                <argument id="locator">
+                  <value class="uiLocator" uri="ui:locator?name=Guarantor_First_Name__c&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DOpportunity%26field%3DGuarantor_First_Name__c"/>
+                </argument>
+                <argument id="interaction">
+                  <value class="uiInteraction" uri="ui:interaction?name=set"/>
+                </argument>
+                <argument id="value">
+                  <value class="value" valueClass="string">Vin</value>
+                </argument>
+                <argument id="blur">
+                  <value class="value" valueClass="boolean">false</value>
+                </argument>
+                <argument id="pressEnter">
+                  <value class="value" valueClass="boolean">false</value>
+                </argument>
+                <argument id="captureBefore">
+                  <value class="value" valueClass="string">false</value>
+                </argument>
+                <argument id="captureAfter">
+                  <value class="value" valueClass="string">false</value>
+                </argument>
+                <argument id="beforeWait">
+                  <value class="uiWait" uri="default"/>
+                </argument>
+                <argument id="afterWait">
+                  <value class="uiWait" uri="default"/>
+                </argument>
+                <argument id="interactionDescription">
+                  <value class="value" valueClass="string">Set the Guarantor First Name field to Vin</value>
+                </argument>
+                <argument id="autoRetry"/>
+              </arguments>
+              <generatedParameters>
+                <apiParam group="value" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=Guarantor_First_Name__c" name="value" seq="10000" title="Value">
+                  <summary>The value to be populated.</summary>
+                  <type>
+                    <textType>
+                      <constraints>
+                        <valueConstraint name="maxLength">18</valueConstraint>
+                        <valueConstraint name="maxLines">1</valueConstraint>
+                      </constraints>
+                    </textType>
+                  </type>
+                </apiParam>
+                <apiParam group="value" name="blur" seq="10001" title="Tab off field">
+                  <summary>Whether the tab key should be pressed after the value is populated.</summary>
+                  <type>
+                    <booleanType/>
+                  </type>
+                </apiParam>
+                <apiParam group="value" name="pressEnter" seq="10002" title="Press Enter">
+                  <summary>Whether the Enter key should be pressed after the value is populated.</summary>
+                  <type>
+                    <booleanType/>
+                  </type>
+                </apiParam>
+              </generatedParameters>
+            </apiCall>
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" isTitleUpdated="true" name="UiDoAction" testItemId="68" title="Set the Guarantor Last Name field ">
+              <arguments>
+                <argument id="locator">
+                  <value class="uiLocator" uri="ui:locator?name=Guarantor_Last_Name__c&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DOpportunity%26field%3DGuarantor_Last_Name__c"/>
+                </argument>
+                <argument id="interaction">
+                  <value class="uiInteraction" uri="ui:interaction?name=set"/>
+                </argument>
+                <argument id="value">
+                  <value class="value" valueClass="string">Mar</value>
+                </argument>
+                <argument id="blur">
+                  <value class="value" valueClass="boolean">false</value>
+                </argument>
+                <argument id="pressEnter">
+                  <value class="value" valueClass="boolean">false</value>
+                </argument>
+                <argument id="captureBefore">
+                  <value class="value" valueClass="string">false</value>
+                </argument>
+                <argument id="captureAfter">
+                  <value class="value" valueClass="string">false</value>
+                </argument>
+                <argument id="beforeWait">
+                  <value class="uiWait" uri="default"/>
+                </argument>
+                <argument id="afterWait">
+                  <value class="uiWait" uri="default"/>
+                </argument>
+                <argument id="interactionDescription">
+                  <value class="value" valueClass="string">Set the Guarantor Last Name field to Mar</value>
+                </argument>
+                <argument id="autoRetry"/>
+              </arguments>
+              <generatedParameters>
+                <apiParam group="value" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=Guarantor_Last_Name__c" name="value" seq="10000" title="Value">
+                  <summary>The value to be populated.</summary>
+                  <type>
+                    <textType>
+                      <constraints>
+                        <valueConstraint name="maxLength">18</valueConstraint>
+                        <valueConstraint name="maxLines">1</valueConstraint>
+                      </constraints>
+                    </textType>
+                  </type>
+                </apiParam>
+                <apiParam group="value" name="blur" seq="10001" title="Tab off field">
+                  <summary>Whether the tab key should be pressed after the value is populated.</summary>
+                  <type>
+                    <booleanType/>
+                  </type>
+                </apiParam>
+                <apiParam group="value" name="pressEnter" seq="10002" title="Press Enter">
+                  <summary>Whether the Enter key should be pressed after the value is populated.</summary>
+                  <type>
+                    <booleanType/>
+                  </type>
+                </apiParam>
+              </generatedParameters>
+            </apiCall>
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" isTitleUpdated="true" name="UiDoAction" testItemId="69" title="Set the Guarantor Email field ">
+              <arguments>
+                <argument id="locator">
+                  <value class="uiLocator" uri="ui:locator?name=Guarantor_Email__c&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DOpportunity%26field%3DGuarantor_Email__c"/>
+                </argument>
+                <argument id="interaction">
+                  <value class="uiInteraction" uri="ui:interaction?name=set"/>
+                </argument>
+                <argument id="value">
+                  <value class="value" valueClass="string">VinMar45@em.com</value>
+                </argument>
+                <argument id="blur">
+                  <value class="value" valueClass="boolean">false</value>
+                </argument>
+                <argument id="pressEnter">
+                  <value class="value" valueClass="boolean">false</value>
+                </argument>
+                <argument id="captureBefore">
+                  <value class="value" valueClass="string">false</value>
+                </argument>
+                <argument id="captureAfter">
+                  <value class="value" valueClass="string">false</value>
+                </argument>
+                <argument id="beforeWait">
+                  <value class="uiWait" uri="default"/>
+                </argument>
+                <argument id="afterWait">
+                  <value class="uiWait" uri="default"/>
+                </argument>
+                <argument id="interactionDescription">
+                  <value class="value" valueClass="string">Set the Guarantor Email field to VinMar45@em.com</value>
+                </argument>
+                <argument id="autoRetry"/>
+              </arguments>
+              <generatedParameters>
+                <apiParam group="value" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=Guarantor_Email__c" name="value" seq="10000" title="Value">
+                  <summary>The value to be populated.</summary>
+                  <type>
+                    <textType>
+                      <constraints>
+                        <valueConstraint name="maxLength">18</valueConstraint>
+                        <valueConstraint name="maxLines">1</valueConstraint>
+                      </constraints>
+                    </textType>
+                  </type>
+                </apiParam>
+                <apiParam group="value" name="blur" seq="10001" title="Tab off field">
+                  <summary>Whether the tab key should be pressed after the value is populated.</summary>
+                  <type>
+                    <booleanType/>
+                  </type>
+                </apiParam>
+                <apiParam group="value" name="pressEnter" seq="10002" title="Press Enter">
+                  <summary>Whether the Enter key should be pressed after the value is populated.</summary>
+                  <type>
+                    <booleanType/>
+                  </type>
+                </apiParam>
+              </generatedParameters>
+            </apiCall>
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" isTitleUpdated="true" name="UiDoAction" testItemId="248" title="Set the Guarantor Mobile field">
+              <arguments>
+                <argument id="locator">
+                  <value class="uiLocator" uri="ui:locator?name=Guarantor_Mobile__c&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DOpportunity%26field%3DGuarantor_Mobile__c"/>
+                </argument>
+                <argument id="interaction">
+                  <value class="uiInteraction" uri="ui:interaction?name=set"/>
+                </argument>
+                <argument id="value">
+                  <value class="value" valueClass="string">9648794848</value>
+                </argument>
+                <argument id="blur">
+                  <value class="value" valueClass="boolean">false</value>
+                </argument>
+                <argument id="pressEnter">
+                  <value class="value" valueClass="boolean">false</value>
+                </argument>
+                <argument id="captureBefore">
+                  <value class="value" valueClass="string">false</value>
+                </argument>
+                <argument id="captureAfter">
+                  <value class="value" valueClass="string">false</value>
+                </argument>
+                <argument id="beforeWait">
+                  <value class="uiWait" uri="default"/>
+                </argument>
+                <argument id="afterWait">
+                  <value class="uiWait" uri="default"/>
+                </argument>
+                <argument id="interactionDescription">
+                  <value class="value" valueClass="string">Set the Guarantor Mobile field to 9648794848</value>
+                </argument>
+                <argument id="autoRetry"/>
+              </arguments>
+              <generatedParameters>
+                <apiParam group="value" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=Guarantor_Mobile__c" name="value" seq="10000" title="Value">
+                  <summary>The value to be populated.</summary>
+                  <type>
+                    <textType/>
+                  </type>
+                </apiParam>
+                <apiParam group="value" name="blur" seq="10001" title="Tab off field">
+                  <summary>Whether the tab key should be pressed after the value is populated.</summary>
+                  <type>
+                    <booleanType/>
+                  </type>
+                </apiParam>
+                <apiParam group="value" name="pressEnter" seq="10002" title="Press Enter">
+                  <summary>Whether the Enter key should be pressed after the value is populated.</summary>
+                  <type>
+                    <booleanType/>
+                  </type>
+                </apiParam>
+              </generatedParameters>
+            </apiCall>
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" isTitleUpdated="true" name="UiDoAction" testItemId="249" title="Set the Guarantor SSN field">
+              <arguments>
+                <argument id="locator">
+                  <value class="uiLocator" uri="ui:locator?name=Guarantor_SSN__c&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DOpportunity%26field%3DGuarantor_SSN__c"/>
+                </argument>
+                <argument id="interaction">
+                  <value class="uiInteraction" uri="ui:interaction?name=set"/>
+                </argument>
+                <argument id="value">
+                  <value class="value" valueClass="string">984569874214</value>
+                </argument>
+                <argument id="blur">
+                  <value class="value" valueClass="boolean">false</value>
+                </argument>
+                <argument id="pressEnter">
+                  <value class="value" valueClass="boolean">false</value>
+                </argument>
+                <argument id="captureBefore">
+                  <value class="value" valueClass="string">false</value>
+                </argument>
+                <argument id="captureAfter">
+                  <value class="value" valueClass="string">false</value>
+                </argument>
+                <argument id="beforeWait">
+                  <value class="uiWait" uri="default"/>
+                </argument>
+                <argument id="afterWait">
+                  <value class="uiWait" uri="default"/>
+                </argument>
+                <argument id="interactionDescription">
+                  <value class="value" valueClass="string">Set the Guarantor SSN field to 984569874214</value>
+                </argument>
+                <argument id="autoRetry"/>
+              </arguments>
+              <generatedParameters>
+                <apiParam group="value" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=Guarantor_SSN__c" name="value" seq="10000" title="Value">
+                  <summary>The value to be populated.</summary>
+                  <type>
+                    <numericType>
+                      <constraints>
+                        <valueConstraint name="length">18</valueConstraint>
+                        <valueConstraint name="decimalPlaces">0</valueConstraint>
+                      </constraints>
+                    </numericType>
+                  </type>
+                </apiParam>
+                <apiParam group="value" name="blur" seq="10001" title="Tab off field">
+                  <summary>Whether the tab key should be pressed after the value is populated.</summary>
+                  <type>
+                    <booleanType/>
+                  </type>
+                </apiParam>
+                <apiParam group="value" name="pressEnter" seq="10002" title="Press Enter">
+                  <summary>Whether the Enter key should be pressed after the value is populated.</summary>
+                  <type>
+                    <booleanType/>
+                  </type>
+                </apiParam>
+              </generatedParameters>
+            </apiCall>
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" isTitleUpdated="true" name="UiDoAction" testItemId="250" title="Set the Guarantor DOB field">
+              <arguments>
+                <argument id="locator">
+                  <value class="uiLocator" uri="ui:locator?name=Guarantor_DOB__c&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DOpportunity%26field%3DGuarantor_DOB__c"/>
+                </argument>
+                <argument id="interaction">
+                  <value class="uiInteraction" uri="ui:interaction?name=set"/>
+                </argument>
+                <argument id="value">
+                  <value class="value" valueClass="date">333763200000</value>
+                </argument>
+                <argument id="blur">
+                  <value class="value" valueClass="boolean">false</value>
+                </argument>
+                <argument id="pressEnter">
+                  <value class="value" valueClass="boolean">false</value>
+                </argument>
+                <argument id="captureBefore">
+                  <value class="value" valueClass="string">false</value>
+                </argument>
+                <argument id="captureAfter">
+                  <value class="value" valueClass="string">false</value>
+                </argument>
+                <argument id="beforeWait">
+                  <value class="uiWait" uri="default"/>
+                </argument>
+                <argument id="afterWait">
+                  <value class="uiWait" uri="default"/>
+                </argument>
+                <argument id="interactionDescription">
+                  <value class="value" valueClass="string">Set the Guarantor DOB field to 1980-07-30</value>
+                </argument>
+                <argument id="autoRetry"/>
+              </arguments>
+              <generatedParameters>
+                <apiParam group="value" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=Guarantor_DOB__c" name="value" seq="10000" title="Value">
+                  <summary>The value to be populated.</summary>
+                  <type>
+                    <dateType/>
+                  </type>
+                </apiParam>
+                <apiParam group="value" name="blur" seq="10001" title="Tab off field">
+                  <summary>Whether the tab key should be pressed after the value is populated.</summary>
+                  <type>
+                    <booleanType/>
+                  </type>
+                </apiParam>
+                <apiParam group="value" name="pressEnter" seq="10002" title="Press Enter">
+                  <summary>Whether the Enter key should be pressed after the value is populated.</summary>
+                  <type>
+                    <booleanType/>
+                  </type>
+                </apiParam>
+              </generatedParameters>
+            </apiCall>
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" isTitleUpdated="true" name="UiDoAction" testItemId="73" title="Check the Guarantor Documents submitted field">
+              <arguments>
+                <argument id="locator">
+                  <value class="uiLocator" uri="ui:locator?name=Guarantor_Documents_submitted__c&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DOpportunity%26field%3DGuarantor_Documents_submitted__c"/>
+                </argument>
+                <argument id="interaction">
+                  <value class="uiInteraction" uri="ui:interaction?name=check"/>
+                </argument>
+                <argument id="blur">
+                  <value class="value" valueClass="boolean">false</value>
+                </argument>
+                <argument id="pressEnter">
+                  <value class="value" valueClass="boolean">false</value>
+                </argument>
+                <argument id="captureBefore">
+                  <value class="value" valueClass="string">false</value>
+                </argument>
+                <argument id="captureAfter">
+                  <value class="value" valueClass="string">false</value>
+                </argument>
+                <argument id="beforeWait">
+                  <value class="uiWait" uri="default"/>
+                </argument>
+                <argument id="afterWait">
+                  <value class="uiWait" uri="default"/>
+                </argument>
+                <argument id="interactionDescription">
+                  <value class="value" valueClass="string">Check the Guarantor Documents submitted field</value>
+                </argument>
+                <argument id="autoRetry"/>
+                <argument id="ieClickMethod">
+                  <value class="value" valueClass="string">Default</value>
+                </argument>
+              </arguments>
+              <generatedParameters>
+                <apiParam group="value" name="ieClickMethod" seq="10000" title="IE Click Method">
+                  <summary>How the click should be executed for Internet Explorer.</summary>
+                  <type>
+                    <choiceType>
+                      <constraints>
+                        <valueConstraint name="valuesSource">com.provar.core.model.base.java.EnumChoiceListValuesSource</valueConstraint>
+                        <valueConstraint name="valuesSourceDependencies">com.provar.core.model.ui.api.ClickMethod</valueConstraint>
+                      </constraints>
+                    </choiceType>
+                  </type>
+                </apiParam>
+              </generatedParameters>
+            </apiCall>
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="74" title="Click the Save button">
+              <arguments>
+                <argument id="locator">
+                  <value class="uiLocator" uri="ui:locator?name=SaveEdit&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DOpportunity%26action%3DSaveEdit"/>
+                </argument>
+                <argument id="interaction">
+                  <value class="uiInteraction" uri="ui:interaction?name=action"/>
+                </argument>
+                <argument id="hover">
+                  <value class="value" valueClass="boolean">false</value>
+                </argument>
+                <argument id="captureBefore">
+                  <value class="value" valueClass="string">false</value>
+                </argument>
+                <argument id="captureAfter">
+                  <value class="value" valueClass="string">false</value>
+                </argument>
+                <argument id="beforeWait">
+                  <value class="uiWait" uri="default"/>
+                </argument>
+                <argument id="afterWait">
+                  <value class="uiWait" uri="default"/>
+                </argument>
+                <argument id="interactionDescription">
+                  <value class="value" valueClass="string">Click the Save button</value>
+                </argument>
+                <argument id="autoRetry"/>
+                <argument id="ieClickMethod">
+                  <value class="value" valueClass="string">Default</value>
+                </argument>
+              </arguments>
+              <generatedParameters>
+                <apiParam group="value" name="hover" seq="10000" title="Hover before Clicking">
+                  <summary>Whether the mouse should hover over the field before it is clicked.</summary>
+                  <type>
+                    <booleanType/>
+                  </type>
+                </apiParam>
+                <apiParam group="value" name="ieClickMethod" seq="10001" title="IE Click Method">
+                  <summary>How the click should be executed for Internet Explorer.</summary>
+                  <type>
+                    <choiceType>
+                      <constraints>
+                        <valueConstraint name="valuesSource">com.provar.core.model.base.java.EnumChoiceListValuesSource</valueConstraint>
+                        <valueConstraint name="valuesSourceDependencies">com.provar.core.model.ui.api.ClickMethod</valueConstraint>
+                      </constraints>
+                    </choiceType>
+                  </type>
+                </apiParam>
+              </generatedParameters>
+            </apiCall>
+          </steps>
+        </clause>
+      </clauses>
+      <generatedParameters>
+        <apiParam group="target" name="sfUiTargetObjectId" title="Object Id">
+          <summary>The Id of the SF Object to be Viewed or Edited.</summary>
+          <type>
+            <textType/>
+          </type>
+        </apiParam>
+      </generatedParameters>
+    </apiCall>
+  </steps>
+  <params>
+    <param linkedToUrl="provar:hasvalue:a3ac5a2b-5b42-4355-9948-f3a9f7a152c3" name="reuseConnectionName" title="Override Connection">
+      <summary>The name of an already opened connect to re-use.</summary>
+      <type>
+        <connectionType>
+          <constraints>
+            <valueConstraint name="variableName">true</valueConstraint>
+            <valueConstraint name="requiredCapabilities">sfSoapConnect</valueConstraint>
+          </constraints>
+        </connectionType>
+      </type>
+    </param>
+  </params>
+  <outputParams>
+    <param name="MyOppID" title="MyOppID">
+      <summary>The name of the value to be set.  May contain sub-values, e.g. 'Value1.SubValue1'.</summary>
+      <type>
+        <textType>
+          <constraints>
+            <valueConstraint name="minLength">0</valueConstraint>
+            <valueConstraint name="maxLength">9999</valueConstraint>
+            <valueConstraint name="regex"/>
+          </constraints>
+        </textType>
+      </type>
+      <sourceValue class="variable">
+        <path element="MyOppID"/>
+      </sourceValue>
+    </param>
+  </outputParams>
+  <args>
+    <argument id="reuseConnectionName">
+      <value class="variable">
+        <path element="reuseConnectionName"/>
+      </value>
+    </argument>
+  </args>
+  <outputArgs>
+    <outputArgument id="MyOppID">
+      <name class="value" valueClass="string">MyOppID</name>
+    </outputArgument>
+  </outputArgs>
+</testCase>
