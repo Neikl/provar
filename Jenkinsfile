@@ -18,9 +18,8 @@ pipeline {
 
             steps {
 
-                echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"       
-                sh "pwd"
-                sh "xvfb-run ant -f ANT/build.xml -v"
+                echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
+                sh "ant -f ANT/build.xml runtests"
 
             }
 
