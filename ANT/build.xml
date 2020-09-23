@@ -27,7 +27,7 @@
 				excludeCallableTestCases="false" 
 				salesforceMetadataCache="Reuse" 
 				projectCachePath="../../.provarCaches"
-			        .licensePath="/var/lib/jenkins/workspace/provar-testing/.licenses"
+			        licensePath="/var/lib/jenkins/workspace/provar-testing/.licenses"
 				testOutputlevel="WARNING" 
 				pluginOutputlevel="WARNING"
 				stopTestRunOnError="false"
