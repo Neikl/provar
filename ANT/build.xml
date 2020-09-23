@@ -27,6 +27,7 @@
 				excludeCallableTestCases="false" 
 				salesforceMetadataCache="Reuse" 
 				projectCachePath="../../.provarCaches"
+			        licensePath="../.licenses"
 				testOutputlevel="WARNING" 
 				pluginOutputlevel="WARNING"
 				stopTestRunOnError="false"
