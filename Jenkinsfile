@@ -20,7 +20,7 @@ pipeline {
 
                 echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"       
                 sh "pwd"
-                sh "xvfb-run ant –f /ANT/build.xml"
+                sh "xvfb-run ant –f ./ANT/build.xml"
 
             }
 
