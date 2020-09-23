@@ -20,7 +20,7 @@ pipeline {
 
                 echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"       
 
-                sh "ant -f ANT/build.xml runtests"
+                sh "sudo ant -f ANT/build.xml runtests"
 
             }
 
