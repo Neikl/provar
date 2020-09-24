@@ -36,7 +36,7 @@
 				invokeTestRunMonitor="true"
 				>
 		
-			<fileset dir="../tests"><include name="Merchandise.testcase"/></fileset>
+			<fileset id="testcases" dir="../tests"><include name="Merchandise.testcase"/></fileset>
 
 			<emailProperties sendEmail="true" primaryRecipients="indiramummadi@gmail.com" ccRecipients="" bccRecipients="" emailSubject="Provar test run report" attachExecutionReport="true" attachZip="false"/>
 			<attachmentProperties includeAllFailuresInSummary="true" includeOnlyFailures="false" includeOnlyBdd="false" includeSkipped="false" includeTestCaseDescription="true" includeScreenshots="true" includeWarningMessages="false" includeInfoMessages="true" includeDebugMessages="false" includeTestStepTime="false" includeTestStepPathHierarchy="true" includeFullScreenShot="false"/>
