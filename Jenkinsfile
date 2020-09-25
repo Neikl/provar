@@ -19,7 +19,7 @@ pipeline {
             steps {
                 sh "java -version"
                 echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
-                sh "ant -f ANT/build.xml runtests"
+                sh "xvfb-run ant -f ANT/build.xml -v"
 
             }
 
